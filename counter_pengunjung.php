@@ -1,27 +1,26 @@
 <?php
 class Pengunjung {
-    public static $jumlah = 0;
+    public static $jumlah = 0; // Static property milik class [cite: 205]
 
     public function __construct() {
-        self::$jumlah++;
+        self::$jumlah++; // Menambah jumlah setiap objek dibuat [cite: 211]
     }
 
-    // Tambahkan method reset ini [cite: 224]
     public static function reset() {
-        self::$jumlah = 0; [cite: 227]
+        self::$jumlah = 0; // Mereset nilai static property [cite: 227]
     }
 }
 
-// Ubah jadi 5 objek 
+// Membuat 5 objek sesuai instruksi [cite: 216]
 $p1 = new Pengunjung();
 $p2 = new Pengunjung();
 $p3 = new Pengunjung();
 $p4 = new Pengunjung();
 $p5 = new Pengunjung();
 
-echo "Jumlah Pengunjung Sebelum Reset: " . Pengunjung::$jumlah . "<br>"; // Muncul 5
+echo "Jumlah Pengunjung (Sebelum Reset): " . Pengunjung::$jumlah . "<br>"; // Output: 5
 
-Pengunjung::reset(); // Panggil fungsi reset [cite: 237]
+Pengunjung::reset(); // Memanggil static method [cite: 224]
 
-echo "Jumlah Pengunjung Setelah Reset: " . Pengunjung::$jumlah; // Muncul 0
+echo "Jumlah Pengunjung (Setelah Reset): " . Pengunjung::$jumlah; // Output: 0
 ?>
